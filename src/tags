@@ -1,0 +1,75 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+EXPECTED	github.com/nsf/gocode/_testing/run.py	/^EXPECTED = YELLOW + "EXPECTED: " + NC$/;"	v
+FAIL	github.com/nsf/gocode/_testing/run.py	/^FAIL = RED + "FAIL!" + NC$/;"	v
+GOROOT	github.com/nsf/gocode/debian/rules	/^export GOROOT=\/usr\/lib\/go$/;"	m
+GREEN	github.com/nsf/gocode/_testing/run.py	/^GREEN = "\\033[0;32m"$/;"	v
+NC	github.com/nsf/gocode/_testing/run.py	/^NC = "\\033[0m"$/;"	v
+OK	github.com/nsf/gocode/_testing/run.py	/^OK = GREEN + "PASS!" + NC$/;"	v
+RED	github.com/nsf/gocode/_testing/run.py	/^RED = "\\033[0;31m"$/;"	v
+TEXT	code.google.com/p/go.net/ipv4/thunk_linux_386.s	/^TEXT	·socketcall(SB),4,$0-36$/;"	l
+TEXT	code.google.com/p/go.net/ipv6/thunk_linux_386.s	/^TEXT	·socketcall(SB),4,$0-36$/;"	l
+YELLOW	github.com/nsf/gocode/_testing/run.py	/^YELLOW = "\\033[0;33m"$/;"	v
+ac-comphist-sort	github.com/nsf/gocode/emacs/go-autocomplete.el	/^(defun ac-comphist-sort (db collection prefix &optional threshold)$/;"	f
+ac-go-action	github.com/nsf/gocode/emacs/go-autocomplete.el	/^(defun ac-go-action ()$/;"	f
+ac-go-candidates	github.com/nsf/gocode/emacs/go-autocomplete.el	/^(defun ac-go-candidates ()$/;"	f
+ac-go-document	github.com/nsf/gocode/emacs/go-autocomplete.el	/^(defun ac-go-document (item)$/;"	f
+ac-go-expand-arguments-into-snippets	github.com/nsf/gocode/emacs/go-autocomplete.el	/^(defcustom ac-go-expand-arguments-into-snippets t$/;"	f
+ac-go-format-autocomplete	github.com/nsf/gocode/emacs/go-autocomplete.el	/^(defun ac-go-format-autocomplete (buffer-contents)$/;"	f
+ac-go-get-candidates	github.com/nsf/gocode/emacs/go-autocomplete.el	/^(defun ac-go-get-candidates (strings)$/;"	f
+ac-go-insert-yas-snippet-string	github.com/nsf/gocode/emacs/go-autocomplete.el	/^(defun ac-go-insert-yas-snippet-string (s)$/;"	f
+ac-go-invoke-autocomplete	github.com/nsf/gocode/emacs/go-autocomplete.el	/^(defun ac-go-invoke-autocomplete ()$/;"	f
+ac-go-prefix	github.com/nsf/gocode/emacs/go-autocomplete.el	/^(defun ac-go-prefix ()$/;"	f
+ac-go-split-args	github.com/nsf/gocode/emacs/go-autocomplete.el	/^(defun ac-go-split-args (args-str)$/;"	f
+company-go	github.com/nsf/gocode/emacs-company/company-go.el	/^(defgroup company-go nil$/;"	f
+company-go	github.com/nsf/gocode/emacs-company/company-go.el	/^(defun company-go (command &optional arg &rest ignored)$/;"	f
+company-go--candidates	github.com/nsf/gocode/emacs-company/company-go.el	/^(defun company-go--candidates ()$/;"	f
+company-go--extract-annotation	github.com/nsf/gocode/emacs-company/company-go.el	/^(defun company-go--extract-annotation (meta)$/;"	f
+company-go--extract-arguments	github.com/nsf/gocode/emacs-company/company-go.el	/^(defun company-go--extract-arguments (str)$/;"	f
+company-go--format-meta	github.com/nsf/gocode/emacs-company/company-go.el	/^(defun company-go--format-meta (candidate)$/;"	f
+company-go--get-candidates	github.com/nsf/gocode/emacs-company/company-go.el	/^(defun company-go--get-candidates (strings)$/;"	f
+company-go--godef-jump	github.com/nsf/gocode/emacs-company/company-go.el	/^(defun company-go--godef-jump (point)$/;"	f
+company-go--in-num-literal-p	github.com/nsf/gocode/emacs-company/company-go.el	/^(defun company-go--in-num-literal-p ()$/;"	f
+company-go--insert-arguments	github.com/nsf/gocode/emacs-company/company-go.el	/^(defun company-go--insert-arguments (meta)$/;"	f
+company-go--invoke-autocomplete	github.com/nsf/gocode/emacs-company/company-go.el	/^(defun company-go--invoke-autocomplete ()$/;"	f
+company-go--location	github.com/nsf/gocode/emacs-company/company-go.el	/^(defun company-go--location (arg)$/;"	f
+company-go--location-1	github.com/nsf/gocode/emacs-company/company-go.el	/^(defun company-go--location-1 (arg)$/;"	f
+company-go--prefix	github.com/nsf/gocode/emacs-company/company-go.el	/^(defun company-go--prefix ()$/;"	f
+company-go-begin-after-member-access	github.com/nsf/gocode/emacs-company/company-go.el	/^(defcustom company-go-begin-after-member-access t$/;"	f
+company-go-gocode-command	github.com/nsf/gocode/emacs-company/company-go.el	/^(defcustom company-go-gocode-command "gocode"$/;"	f
+company-go-insert-arguments	github.com/nsf/gocode/emacs-company/company-go.el	/^(defcustom company-go-insert-arguments t$/;"	f
+company-go-show-annotation	github.com/nsf/gocode/emacs-company/company-go.el	/^(defcustom company-go-show-annotation nil$/;"	f
+expected_fail	github.com/nsf/gocode/_testing/run.py	/^expected_fail = 0$/;"	v
+expected_to_fail	github.com/nsf/gocode/_testing/run.py	/^expected_to_fail = {$/;"	v
+fail	github.com/nsf/gocode/_testing/run.py	/^fail = 0$/;"	v
+g:loaded_gocode	github.com/nsf/gocode/vim/autoload/gocomplete.vim	/^let g:loaded_gocode = 1$/;"	v
+glob	github.com/nsf/gocode/_testing/run.py	/^import os, glob, subprocess, sys$/;"	i
+go-autocomplete	github.com/nsf/gocode/emacs/go-autocomplete.el	/^(defgroup go-autocomplete nil$/;"	f
+gocodeAutocomplete	github.com/nsf/gocode/vim/autoload/gocomplete.vim	/^fu! s:gocodeAutocomplete()$/;"	f
+gocodeCommand	github.com/nsf/gocode/vim/autoload/gocomplete.vim	/^fu! s:gocodeCommand(cmd, preargs, args)$/;"	f
+gocodeCurrentBuffer	github.com/nsf/gocode/vim/autoload/gocomplete.vim	/^fu! s:gocodeCurrentBuffer()$/;"	f
+gocodeCurrentBufferOpt	github.com/nsf/gocode/vim/autoload/gocomplete.vim	/^fu! s:gocodeCurrentBufferOpt(filename)$/;"	f
+gocodeCursor	github.com/nsf/gocode/vim/autoload/gocomplete.vim	/^fu! s:gocodeCursor()$/;"	f
+gocodeShellescape	github.com/nsf/gocode/vim/autoload/gocomplete.vim	/^fu! s:gocodeShellescape(arg)$/;"	f
+gocomplete#Complete	github.com/nsf/gocode/vim/autoload/gocomplete.vim	/^fu! gocomplete#Complete(findstart, base)$/;"	f
+ok	github.com/nsf/gocode/_testing/run.py	/^ok = 0$/;"	v
+os	github.com/nsf/gocode/_testing/run.py	/^import os, glob, subprocess, sys$/;"	i
+print_fail_report	github.com/nsf/gocode/_testing/run.rb	/^def print_fail_report(t, out, outexpected)$/;"	f
+print_fail_report	github.com/nsf/gocode/_testing/run.tcl	/^proc print_fail_report {t out expected} {$/;"	p
+print_pass_report	github.com/nsf/gocode/_testing/run.rb	/^def print_pass_report(t)$/;"	f
+print_pass_report	github.com/nsf/gocode/_testing/run.tcl	/^proc print_pass_report {t} {$/;"	p
+print_stats	github.com/nsf/gocode/_testing/run.rb	/^def print_stats$/;"	f
+print_stats	github.com/nsf/gocode/_testing/run.tcl	/^proc print_stats {} {$/;"	p
+read_file	github.com/nsf/gocode/_testing/run.tcl	/^proc read_file {filename} {$/;"	p
+run_test	github.com/nsf/gocode/_testing/run.py	/^def run_test(t):$/;"	f
+run_test	github.com/nsf/gocode/_testing/run.rb	/^def run_test(t)$/;"	f
+run_test	github.com/nsf/gocode/_testing/run.tcl	/^proc run_test {t} {$/;"	p
+s:vim_system	github.com/nsf/gocode/vim/autoload/gocomplete.vim	/^let s:vim_system = get(g:, 'gocomplete#system_function', 'system')$/;"	v
+subprocess	github.com/nsf/gocode/_testing/run.py	/^import os, glob, subprocess, sys$/;"	i
+sys	github.com/nsf/gocode/_testing/run.py	/^import os, glob, subprocess, sys$/;"	i
+system	github.com/nsf/gocode/vim/autoload/gocomplete.vim	/^fu! s:system(str, ...)$/;"	f
+total	github.com/nsf/gocode/_testing/run.py	/^total = 0$/;"	v
