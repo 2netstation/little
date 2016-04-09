@@ -4,12 +4,39 @@ import (
     "fmt"
     _ "github.com/go-sql-driver/mysql"
 )
-func main(){
 
+//func getTask (date string, time string, day string, status int) (bool) {
+    //db, err := sql.Open("mysql", "wustan:websocket@(127.0.0.1:3306)/websocket")
+    //if err!= nil {
+        //panic(err.Error())
+    //}
+    //defer db.Close()
+    //for i := 0; i < 10; i++{
+        //var (
+            //time_from = "2016-03-27 12:00:00"
+
+
+        //)
+
+        //result, err := db.Exec(
+            //"INSERT INTO task (time_from, time_to, day, trigger,callback, status, create_time) VALUES ($1, $2, $3, $4, $5, $6, $7)",
+            //""
+        //)
+    //}
+    //defer rows.Close()
+
+//}
+
+
+
+
+
+
+func main(){
     db,err := sql.Open("mysql","wustan:websocket@(127.0.0.1:3306)/websocket")
 
     //need use propur error handler
-    if err != nil{
+    if err != nil {
         panic(err.Error())
     }
     defer db.Close()
