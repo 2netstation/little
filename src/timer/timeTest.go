@@ -16,8 +16,7 @@ func main(){
     var sec int
     hour,min,sec = t.Clock()
     unix_t:= time.Now().Unix()
-    unix_nano := time.Now().UnixNano()
-    fmt.Println(unix_t, unix_nano, hour, min, sec)
+    fmt.Println(unix_t, hour, min, sec)
     fmt.Println(time.Unix(1458448008, 0))
 
 

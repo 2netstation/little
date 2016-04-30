@@ -6,36 +6,20 @@ import (
     "log"
     "net/http"
     "time"
+    "database/sql"
+    task "DB"
+    "reflect"
 )
 
-/*type clockModule struct {*/
-    /*day      [7]string*/
-    /*dateFrom string*/
-    /*dateTo   string*/
-    /*trigger  string//触发时间*/
-    /*status   int*/
-
-/*}*/
-
-/*type message struct {*/
-    /*script     string*/
-    /*callBack   string*/
-    /*statusCode int*/
-    /*errno      int*/
-    /*errmsg     string*/
-/*}*/
-
-
-
-/*type myTimer struct {*/
-    /*script    string*/
-    /*callBack  string*/
-    /*interval  int*/
-    /*beginTime time.Time*/
-    /*endTime   time.Time*/
-    /*trigger   time.Time*/
-/*}*/
-
+const (
+   Sunday time.Weekday = iota
+   Monday
+   Tuesday
+   Wednesday
+   Thursday
+   Friday
+   Saturday
+)
 
 func Echo(ws *websocket.Conn){
     var err error
@@ -87,6 +71,19 @@ func regularClock(ws *websocket.Conn){
     }
 }
 
+//设置任务
+func SetTask(mytask task.MyTask) bool {
+    daytime  := mytask.Daytime
+    trigger  := mytask.Trigger_time
+    callback := mytask.Callback
+
+    now := time.Now()
+    if Wednesday == now.Weekday() {
+        fmt.Println(true)
+    }
+    return true
+}
+
 //确定性一次定时
 func singleClock(ws *websocket.Conn){
     var setString string
@@ -115,33 +112,38 @@ func singleClock(ws *websocket.Conn){
             }
         }
     }
-
 }
 
 //测试读取数据
 func readFrom(ws *websocket.Conn){
-
-
     var reply string
-
     if err := websocket.Message.Receive(ws, &reply); err!=nil{
         fmt.Println("can't read ")
-
     }
     fmt.Println( reply )
 }
 
-
-
-
 func main(){
-     fmt.Println("start ")
-     http.Handle("/",http.FileServer(http.Dir(".")))
-     http.Handle("/socket",websocket.Handler(singleClock))
-     /*http.Handle("/socket",websocket.Handler(regularClock))*/
-     /*http.Handle("/socket",websocket.Handler(Echo))*/
-     if err:=http.ListenAndServe(":1234",nil);err!=nil{
-          log.Fatal("ListenAndServe",err)
-     }
-     fmt.Println("end")
+    begin   := "2015-02-02 00:00:00"
+    end     := "2017-02-02 00:00:00"
+    daytime := Monday
+    db, err := sql.Open("mysql","wustan:websocket@(127.0.0.1:3306)/websocket")
+    if err != nil {
+        panic(err.Error())
+    }
+    defer db.Close()
+    ret := task.GetTask(db, begin, end, daytime)
+    fmt.Println(reflect.TypeOf(ret[0]))
+    fmt.Println(ret[0].Daytime)
+    SetTask(ret[0])
+
+    fmt.Println("start ")
+    http.Handle("/",http.FileServer(http.Dir(".")))
+    /*http.Handle("/socket",websocket.Handler(singleClock))*/
+    /*http.Handle("/socket",websocket.Handler(regularClock))*/
+    /*http.Handle("/socket",websocket.Handler(Echo))*/
+    if err:=http.ListenAndServe(":1234",nil);err!=nil{
+         log.Fatal("ListenAndServe",err)
+    }
+    fmt.Println("end")
 }

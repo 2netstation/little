@@ -1,67 +1,75 @@
-package main
+package  DB
+
 import (
     "database/sql"
     _ "github.com/go-sql-driver/mysql"
-    "fmt"
+    /*"fmt"*/
 )
 
-type myTask struct {
-    daytime string
-    trigger_time string
-    callback string
+//加载任务结构
+type MyTask struct {
+    Time_from string
+    Time_to string
+    Daytime string
+    Second_interval int
+    Minute_interval int
+    Hour_interval int
+    Trigger_time string
+    Callback string
 }
 
-func createTask(db *sql.DB, ){
-    db, err := sql.Open("mysql", "wustan:websocket@(127.0.0.1:3306)/websocket")
-    if err != nil {
-        panic(err.Error())
-    }
-    defer db.Close()
-    pre,err := db.Prepare("INSERT INTO task (time_from, time_to, daytime, trigger_time, callback, status,create_time) VALUES (?, ?, ?, ?, ?, ?, ?)")
+//创建任务结构
+type Task struct {
+    time_from string
+    time_to   string
+    daytime   string
+    second_interval int
+    minute_interval int
+    hour_interval int
+    trigger_time string
+    callback  string
+    status    int
+    create_time string
+}
+
+//创建任务
+func CreateTask(db *sql.DB, task Task) int64 {
+    pre,err := db.Prepare("INSERT INTO task (time_from, time_to, daytime, second_interval, minute_interval, hour_interval, trigger_time, callback, status,create_time) VALUES (?, ?, ?, ?, ?, ?, ?)")
     if err != nil {
         panic(err.Error())
     }
     res, err := pre.Exec(
-        "2016-04-10 00:00:00",
-        "2016-05-10 00:00:00",
-        "monday",
-        "01:01:01",
-        "callBackTest",
-        1,
-        "2016-05-10 00:00:00",
+        task.time_from,
+        task.time_to,
+        task.daytime,
+        task.second_interval,
+        task.minute_interval,
+        task.hour_interval,
+        task.trigger_time,
+        task.callback,
+        task.status,
+        task.create_time,
     )
     if err != nil {
         panic(err.Error())
     }
     lastid,err := res.LastInsertId()
-    fmt.Println(lastid)
-
+    return lastid
 }
 
-func getTask(db *sql.DB, begin string,end string) []myTask {
-    defer db.Close()
-    rows, err := db.Query("SELECT `daytime`, `trigger_time`, `callback` FROM task WHERE time_from >= ? AND time_to <= ?", begin, end)
+//获取任务
+func GetTask(db *sql.DB, begin, end, daytime string) []MyTask {
+    rows, err := db.Query("SELECT `time_from`, `time_to`, `daytime`, `trigger_time`, `callback`, `second_interval`, `minute_interval`, `hour_interval` FROM task WHERE time_from >= ? AND time_to <= ? AND daytime = ?", begin, end, daytime)
     if err != nil {
         panic(err.Error())
     }
-    var ret []myTask
+    var ret []MyTask
     for rows.Next() {
-        var temp myTask
-        if err := rows.Scan(&temp.daytime, &temp.trigger_time, &temp.callback); err != nil {
+        var temp MyTask
+        if err := rows.Scan(&temp.Time_from, &temp.Time_to, &temp.Daytime, &temp.Trigger_time, &temp.Callback, &temp.Second_interval, &temp.Minute_interval, &temp.Hour_interval); err != nil {
             panic(err.Error())
         }
         ret = append(ret, temp)
     }
     return ret
-}
-
-func main(){
-    begin   := "2015-02-02 00:00:00"
-    end     := "2017-02-02 00:00:00"
-    db, err := sql.Open("mysql","wustan:websocket@(127.0.0.1:3306)/websocket")
-    if err != nil {
-        panic(err.Error())
-    }
-    ret := getTask(db, begin, end)
-    fmt.Println(ret[1].daytime)
 }
